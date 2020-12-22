@@ -5,8 +5,8 @@
 {% block content %}
 
   <div class="container my-5">
-  	<h2 class="my-5">Свойства продуктов</h2>
-    <div class="row">
+  	<!--  <h2 class="my-5">Продукты</h2> -->
+
     <div class="col-md-3">
          <form method="get">
             {{ filter.form| crispy }}
@@ -19,7 +19,7 @@
 		  <div class="col-md-6 col-sm-12 col-lg-4">
 			<figure class="card card-product">
 				<div class="img-wrap"> 
-					<img src="media/{{ product.mainimage }}" style="width: 100%; height: 300px;">
+					<img src="media/{{ product.mainimage }}" style="width: 100%; height: 200px;">
 				</div>
 				<figcaption class="info-wrap">
 					<h6 class="title text-dots"><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></h6>
@@ -30,8 +30,8 @@
 <!--             <a href="remove/{{ product.slug }}" class="btn btn-danger btn-sm"> Remove</a>
  -->						<!-- price-wrap.// -->
 						 <div class="price-wrap h5">
-							<span class="price-new">руб. {{product.price}}</span>
-							<del class="price-old">руб. 1980</del>
+						<!--	<span class="price-new">руб. {{product.price}}</span> -->
+						<!--   	<del class="price-old">руб. 1980</del> -->
 						</div> 
 					</div> <!-- action-wrap -->
 				</figcaption>

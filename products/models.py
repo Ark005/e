@@ -143,8 +143,8 @@ class  Product(PolymorphicModel):
         result_five = all_result.filter(box_size ='80х80х40-P')
         result_six = all_result.filter(box_size ='240х185х120')
         result_seven = all_result.filter(box_size ='270х220х70')
-        result_eight = all_result.filter(box_size ='корешок 25-40 круглый механизм 7200')
-        result_nine = all_result.filter(box_size ='корешок 45-65 д-образный механизм')
+        r8 = all_result.filter(box_size ='корешок 25-40 круглый механизм 7200')
+        r9 = all_result.filter(box_size ='корешок 45-65 д-образный механизм')
 
         if result_one:
             a = 39.35428* self.tirazh ** 0.2860
@@ -167,11 +167,11 @@ class  Product(PolymorphicModel):
         elif  result_seven:
             return 7799003.1669 # размер 270х220х70 мм ручная сборка y=779.9003x−0.1669
 
-        elif  result_eight:
-            a = (59.35428* self.tirazh) ** 0.2860
+        elif  r8:
+            a = (10000* self.tirazh) ** 0.5
        
             return "{0:.0f}".format(round(a,0))
-        elif  result_nine:
+        elif  r9:
 
             a = (39.35428* self.tirazh) ** 0.2860
 

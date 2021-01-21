@@ -19,9 +19,11 @@ class Cart(models.Model):
         return f'{self.quantity} of {self.item.name}'
 
     def get_total(self):
-        total = self.item.price * self.item.tirazh
-        floattotal = float("{0:.2f}".format(total))
-        return floattotal
+        total = int(self.item.calc())
+        #floattotal = float("{0:.2f}".format(total))
+        return total #floattotal
+ 
+
 
 # Order Model
 class Order(models.Model):
@@ -31,19 +33,19 @@ class Order(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     paymentId = models.CharField(max_length=200, blank=True , null=True)
     orderId = models.CharField(max_length=200, blank=True, null=True)
-    
+
+
     def __str__(self):
         return self.user.username
 
-
+   
     def get_totals(self):
         total = 0
         for order_item in self.orderitems.all():
-        #for order_item in self.cart.item.calc.all():
             total += order_item.get_total()
         
         return total
-
+    
 from django.utils import timezone
 tz = timezone.get_default_timezone()
 

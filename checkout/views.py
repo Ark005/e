@@ -121,7 +121,7 @@ def charge(request):
     totalCents = int(float(order_total * 100))
     if request.method == 'POST':
         charge = stripe.Charge.create(amount=totalCents,
-            currency='inr',
+            currency='rub',
             description=order,
             source=request.POST['stripeToken'])
         print(charge)
